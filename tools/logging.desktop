@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Terminal=true
+Name=LoggingZephyr
+Icon=utilities-terminal
+Exec=gnome-terminal -e "bash -c './Desktop/logging.sh'"
+Categories=Application;
