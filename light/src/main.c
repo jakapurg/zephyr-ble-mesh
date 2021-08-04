@@ -121,7 +121,7 @@ static struct bt_mesh_health_srv health_srv = {
 static struct bt_mesh_model models[] = {
     BT_MESH_MODEL_CFG_SRV(&cfg_srv),
     BT_MESH_MODEL_HEALTH_SRV(&health_srv, &health_pub),
-    BT_MESH_MODEL(BT_MESH_MODEL_ID_GEN_ONOFF_SRV, onoff_opcodes, &onoff_opcodes, NULL)
+    BT_MESH_MODEL(BT_MESH_MODEL_ID_GEN_ONOFF_SRV, onoff_opcodes, &light_pub, NULL)
 };
 
 //define elements that have previously defined models
