@@ -70,6 +70,9 @@ static void set_light_state(struct bt_mesh_model *model, struct bt_mesh_msg_ctx 
 }
 static void get_state(struct bt_mesh_model *model, struct bt_mesh_msg_ctx *ctx, struct net_buf_simple *buf){
     printk("Acknowledged GET\n");
+    reply_addr = ctx->addr;
+    reply_net_idx = ctx->net_idx;
+    reply_app_idx = ctx->app_idx;
     send_or_publish_status(false,current_state);
 }
 
