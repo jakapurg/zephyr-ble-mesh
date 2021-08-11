@@ -7,10 +7,11 @@
 #include <bluetooth/mesh.h>
 
 #ifdef SW0_GPIO_FLAGS
-#define EDGE(SW0_GPIO_FLAGS | GPIO_INT_EDGE)
+#define EDGE    (SW0_GPIO_FLAGS | GPIO_INT_EDGE)
 #else
-#define EDGE(GPIO_INT_EDGE | GPIO_INT_ACTIVE_LOW)
+#define EDGE    (GPIO_INT_EDGE | GPIO_INT_ACTIVE_LOW)
 #endif
+
 #ifndef SW0_GPIO_FLAGS
 #ifdef SW0_GPIO_PIN_PUD
 #define SW0_GPIO_FLAGS SW0_GPIO_PIN_PUD
@@ -72,7 +73,7 @@ static int show_provisioning_pin(bt_mesh_output_action_t action, u32_t number) {
 }
 
 static bool serverHasAddress(struct bt_mesh_model * model) {
-    return model -> pub -> addr == BT_MESH_ADDR_UNASSIGNED;
+    return model -> pub -> addr != BT_MESH_ADDR_UNASSIGNED;
 }
 
 static void provisioning_completed(u16_t net_idx, u16_t addr) {
@@ -184,7 +185,7 @@ int get_state() {
 }
 
 void set_state(u8_t state) {
-    int err = send_state(state, BT_MESH_MODEL_OP_2(0x82, 0x02));
+    int err = send_state(state, BT_MESH_MODEL_OP_2(0x82, 0x03));
     if (err) {
         printk("Sending state failed with error %d\n", err);
     }
