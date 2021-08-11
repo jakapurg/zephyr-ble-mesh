@@ -235,7 +235,6 @@ static void bt_callback(int err) {
 void configure_light() {
     dev = device_get_binding(LED0_GPIO_CONTROLLER);
     gpio_pin_configure(dev, LED0, GPIO_DIR_OUT);
-    write_LED_state(0);
 }
 
 void main() {
