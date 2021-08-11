@@ -54,7 +54,7 @@ static void provisioning_reset(void) {
 }
 
 static bool serverHasAddress(struct bt_mesh_model * model) {
-    return model -> pub -> addr == BT_MESH_ADDR_UNASSIGNED;
+    return model -> pub -> addr != BT_MESH_ADDR_UNASSIGNED;
 }
 
 //provisioning properties and capabilities
