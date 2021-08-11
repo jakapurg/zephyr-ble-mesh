@@ -218,7 +218,7 @@ void btn2_pressed(struct device * gpiob, struct gpio_callback * cb, u32_t pin) {
     k_work_submit( & btn2_work);
 }
 void btn3_pressed(struct device * gpiob, struct gpio_callback * cb, u32_t pin) {
-    k_work_submit( & btn1_work);
+    k_work_submit( & btn3_work);
 }
 void btn4_pressed(struct device * gpiob, struct gpio_callback * cb, u32_t pin) {
     k_work_submit( & btn4_work);
