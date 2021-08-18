@@ -235,6 +235,10 @@ static void bt_callback(int err) {
 void configure_light() {
     dev = device_get_binding(LED0_GPIO_CONTROLLER);
     gpio_pin_configure(dev, LED0, GPIO_DIR_OUT);
+    //Read current light state at initialization
+    u32_t start_state = 0U;
+    int x = gpio_pin_read(dev,LED0,&start_state);
+    current_state = !start_state;
 }
 
 void main() {
