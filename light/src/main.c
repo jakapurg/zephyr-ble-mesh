@@ -133,6 +133,7 @@ const struct bt_mesh_model_op onoff_opcodes[] = {
 
 //each node should support configuration server model
 //indicate our server can act as proxy so we can provision with an app
+//indicate our server can act as a relay
 
 static struct bt_mesh_cfg_srv cfg_srv = {
     .relay = BT_MESH_RELAY_ENABLED,
