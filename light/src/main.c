@@ -135,12 +135,12 @@ const struct bt_mesh_model_op onoff_opcodes[] = {
 //indicate our server can act as proxy so we can provision with an app
 
 static struct bt_mesh_cfg_srv cfg_srv = {
-    .relay = BT_MESH_RELAY_DISABLED,
+    .relay = BT_MESH_RELAY_ENABLED,
     .beacon = BT_MESH_BEACON_DISABLED,
     .frnd = BT_MESH_FRIEND_NOT_SUPPORTED,
     .gatt_proxy = BT_MESH_GATT_PROXY_ENABLED,
     .default_ttl = 7,
-    .net_transmit = BT_MESH_TRANSMIT(2, 20) //every message is transmitted 3 times with intervals at max 20ms
+    .net_transmit = BT_MESH_TRANSMIT(2, 20) 
 };
 
 //each node should support health server model
